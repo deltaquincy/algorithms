@@ -1,4 +1,4 @@
-/**
+/*
  * Gradle Build Script for Project Algorithms
  * deltaQuincy @ 2018
  */
@@ -8,7 +8,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'App'
+mainClassName = 'com.github.deltaquincy.algorithms.Main'
 
 repositories {
     jcenter()
