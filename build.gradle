@@ -1,6 +1,6 @@
 /*
- * Gradle Build Script for Project Algorithms
- * deltaQuincy @ 2018
+ * Copyright (c) 2018 Quincy Liang
+ * Under the MIT license
  */
 
 plugins {

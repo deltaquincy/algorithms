@@ -1,8 +1,6 @@
 /*
- * Copyright 2018 Quincy Liang
- *
- * Project Algorithms. A repository of my algorithms learning.
- * Licensed under the MIT license.
+ * Copyright (c) 2018 Quincy Liang
+ * Under the MIT license
  */
 
 package com.github.deltaquincy.algorithms.searching;

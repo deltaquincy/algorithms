@@ -1,6 +1,6 @@
 /*
- * Gradle Settings for Project Algorithms
- * deltaQuincy @ 2018
+ * Copyright (c) 2018 Quincy Liang
+ * Under the MIT license
  */
 
 rootProject.name = 'algorithms'
