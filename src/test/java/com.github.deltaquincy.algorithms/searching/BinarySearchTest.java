@@ -10,7 +10,7 @@ package com.github.deltaquincy.algorithms.searching;
 import java.util.Arrays;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import com.github.deltaquincy.algorithms.searching.BinarySearch;
 

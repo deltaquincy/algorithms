@@ -8,7 +8,7 @@
 package com.github.deltaquincy.algorithms;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import com.github.deltaquincy.algorithms.Main;
 

@@ -16,7 +16,8 @@ repositories {
 
 dependencies {
     compile 'com.google.guava:guava:23.0'
-    compile 'edu.princeton.cs:algs4:1.0.3' // algs4 book package
+    compile 'edu.princeton.cs:algs4:1.0.3'  // algs4 book package
+    compile 'io.airlift:airline:0.8'  // cli construction package
 
     testCompile 'junit:junit:4.12'
 }
