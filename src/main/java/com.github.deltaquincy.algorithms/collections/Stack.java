@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2018 Quincy Liang
- * Under the MIT license
+ * Under the GPL v3 license
  */
 
 package com.github.deltaquincy.algorithms.collections;
@@ -8,13 +8,15 @@ package com.github.deltaquincy.algorithms.collections;
 import java.util.Iterator;
 
 public class Stack<Item> implements Iterable<Item> {
-    private Node first;
-    private int N;
+    private Node first;  // Top of the stack.
+    private int N;       // Length of the stack.
+
+    // Linked list helper class.
     private class Node {
         Item item;
         Node next;
     }
-    
+
     public boolean isEmpty() {
         return first == null;
     }
@@ -39,10 +41,11 @@ public class Stack<Item> implements Iterable<Item> {
     }
 
     public Iterator<Item> iterator() {
-        return new ListIterator();
+        return new LinkedListStackIterator();
     }
 
-    private class ListIterator implements Iterator<Item> {
+    // Iterator helper class.
+    private class LinkedListStackIterator implements Iterator<Item> {
         private Node current = first;
 
         public boolean hasNext() {
