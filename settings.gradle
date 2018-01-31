@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2018 Quincy Liang
- * Under the MIT license
+ * Under the GPL v3 license
  */
 
 rootProject.name = 'algorithms'
