@@ -9,8 +9,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import com.github.deltaquincy.algorithms.collections.Stack;
-
 public class StackTest {
     private Stack<Integer> stack = new Stack<Integer>();
 

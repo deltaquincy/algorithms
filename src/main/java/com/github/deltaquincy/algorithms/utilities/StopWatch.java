@@ -8,7 +8,6 @@ package com.github.deltaquincy.algorithms.utilities;
 public class StopWatch {
     private final long start;
 
-
     public StopWatch() {
         start = System.currentTimeMillis();
     }
