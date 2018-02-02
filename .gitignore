@@ -1,8 +1,14 @@
 # Special for this project
 /references/
 
+# Created by https://www.gitignore.io/api/macos,linux,windows,java,gradle,code
 
-# Created by https://www.gitignore.io/api/macos,linux,windows,java,gradle
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
 
 ### Java ###
 # Compiled class file
@@ -108,4 +114,4 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 
-# End of https://www.gitignore.io/api/macos,linux,windows,java,gradle
+# End of https://www.gitignore.io/api/macos,linux,windows,java,gradle,code
