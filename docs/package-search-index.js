@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.github.deltaquincy.algorithms.algebra","h":"","u":""},{"l":"com.github.deltaquincy.algorithms.collections","h":"","u":""},{"l":"com.github.deltaquincy.algorithms.graphs","h":"","u":""},{"l":"com.github.deltaquincy.algorithms.sorting","h":"","u":""},{"l":"com.github.deltaquincy.algorithms.utilities","h":"","u":""}]
