@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2018 quincy Liang
- * Under the GPL v3 license
+ * Under the MIT license
  */
 
 package com.github.deltaquincy.algorithms.graphs;
