@@ -36,9 +36,7 @@ public class Queue<T> extends LinkedList<T> {
    * @param items 队列的初始元素的数组
    */
   public Queue(T[] items) {
-    first = null;
-    last = null;
-    size = 0;
+    this();
     for (T i : items) {
       enqueue(i);
     }

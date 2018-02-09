@@ -31,8 +31,7 @@ public class Bag<T> extends LinkedList<T> {
    * @param items 背包的初始元素的数组
    */
   public Bag(T[] items) {
-    first = null;
-    size = 0;
+    this();
     for (T i : items) {
       add(i);
     }

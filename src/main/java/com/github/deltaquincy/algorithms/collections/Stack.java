@@ -33,8 +33,7 @@ public class Stack<T> extends LinkedList<T> {
    * @param items 栈的初始元素的数组
    */
   public Stack(T[] items) {
-    first = null;
-    size = 0;
+    this();
     for (T i : items) {
       push(i);
     }

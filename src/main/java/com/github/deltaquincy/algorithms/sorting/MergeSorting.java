@@ -13,8 +13,6 @@ package com.github.deltaquincy.algorithms.sorting;
  * 该类包含一个静态方法，可对数组进行原地的归并排序。
  */
 public class MergeSorting extends Sorting {
-  /** 归并所需的辅助数组 */
-  private static Comparable[] temp;
   
   /**
    * 对数组进行原地的归并排序。
@@ -22,20 +20,20 @@ public class MergeSorting extends Sorting {
    * @param <T> 数组元素的引用类型
    * @param a 将要排序的数组
    */
-  public static void sort(Comparable[] a) {
+  public static <T extends Comparable<T>> void sort(T[] a) {
     int n = a.length;
-    temp = new Comparable[n];
-    sort(a, 0, n-1);
+    T[] temp = (T[]) new Comparable[n];
+    sort(a, temp, 0, n-1);
   }
   
-  private static void sort(Comparable[] a, int lo, int hi) {
+  private static <T extends Comparable<T>> void sort(T[] a, T[] temp, int lo, int hi) {
     if (hi <= lo) {
       return;
     }
     int mid = lo + (hi - lo) / 2;
-    sort(a, lo, mid);
-    sort(a, mid+1, hi);
-    merge(a, lo, mid, hi);
+    sort(a, temp, lo, mid);
+    sort(a, temp, mid+1, hi);
+    merge(a, temp, lo, mid, hi);
   }
 
   
@@ -48,7 +46,7 @@ public class MergeSorting extends Sorting {
    * @param mid 归并中位索引
    * @param hi 归并上限索引
    */
-  public static void merge(Comparable[] a, int lo, int mid, int hi) {
+  public static <T extends Comparable<T>> void merge(T[] a, T[] temp, int lo, int mid, int hi) {
     int i = lo;
     int j = mid + 1;
 
