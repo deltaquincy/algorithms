@@ -4,9 +4,6 @@
  */
 
 /**
- * A bundle of collection data structures.
- * 
- * 
- * @author Quincy Liang [mblquincy@outlook.com]
+ * 一系列集合类数据结构的实现。
  */
 package com.github.deltaquincy.algorithms.collections;

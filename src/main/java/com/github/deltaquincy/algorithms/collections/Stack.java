@@ -5,98 +5,64 @@
 
 package com.github.deltaquincy.algorithms.collections;
 
-import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
- * The <code>Stack</code> class is a <i>LIFO</i> data structure. In this
- * version, the implementation uses linked list to realize variable length
- * mechanism.
- *
- * @author Quincy Liang
- */
-public class Stack<Item> implements Iterable<Item> {
-  private Node first;  // Top of the stack.
-  private int N;       // Length of the stack.
+ * 栈数据结构。
+ * 
+ * 栈描述了一个后进先出（LIFO）的数据结构，包含压入元素（push）和弹出元素（pop）两个主要方法。
+ * 这个类使用了链表结构来实现栈。
+ */ 
+public class Stack<T> extends LinkedList<T> {
 
-  // Linked list helper class.
-  private class Node {
-    Item item;
-    Node next;
+  /**
+   * 栈的初始化构造器。
+   * 
+   * 该构造器将构造一个空栈。
+   */
+  public Stack() {
+    first = null;
+    size = 0;
   }
 
   /**
-   * Check if the stack is empty.
-   *
-   * @return true if the stack is empty, in other words, its length is 0
+   * 接受一个初始元素数组的栈构造器。
+   * 
+   * 该构造器将按照数组的迭代顺序将元素压入新栈中。
+   * 
+   * @param items 栈的初始元素的数组
    */
-  public boolean isEmpty() {
-    return first == null;
+  public Stack(T[] items) {
+    first = null;
+    size = 0;
+    for (T i : items) {
+      push(i);
+    }
   }
 
   /**
-   * Get the current size of the stack.
-   *
-   * @return the current size, or length, of the stack
+   * 将元素压入栈。
+   * 
+   * @param item 将要压入栈的元素
    */
-  public int size() {
-    return N;
+  public void push(T item) {
+    first = new Node(item, first);
+    size++;
   }
 
   /**
-   * Push an item into top of the stack. This would add <code>1</code> to the
-   * stack length.
-   *
-   * @param item the item to push into the stack
+   * 弹出最近压入栈的元素。
+   * 
+   * @return 最近压入栈的元素
+   * @throws NoSuchElementException 若对空栈进行弹栈操作，将导致下溢异常。
    */
-  public void push(Item item) {
-    Node oldfirst = first;
-    first = new Node();
-    first.item = item;
-    first.next = oldfirst;
-    N++;
-  }
-
-  /**
-   * Pop an item from top of the stack. This would delete the item from the
-   * stack and minus <code>1</code> to the stack length.
-   *
-   * @return the item just poped from the stack
-   */
-  public Item pop() {
-    Item item = first.item;
+  public T pop() throws NoSuchElementException {
+    if (isEmpty()) {
+      throw new NoSuchElementException("The stack is empty.");
+    }
+    T item = first.item;
     first = first.next;
-    N--;
+    size--;
     return item;
-  }
-
-  /**
-   * Implement the iterable interface. For <code>Stack</code>, the iteration
-   * would be from the top to the bottom of the stack, corresponding to the
-   * <i>LIFO</i> logic.
-   *
-   * @return an appropriate iterator
-   *
-   * @see java.lang.Iterable
-   * @see java.util.Iterator
-   */
-  public Iterator<Item> iterator() {
-    return new LinkedListStackIterator();
-  }
-
-  // Iterator helper class.
-  private class LinkedListStackIterator implements Iterator<Item> {
-    private Node current = first;
-
-    public boolean hasNext() {
-      return current != null;
-    }
-
-    public void remove() {}
-
-    public Item next() {
-      Item item = current.item;
-      current = current.next;
-      return item;
-    }
   }
 }
