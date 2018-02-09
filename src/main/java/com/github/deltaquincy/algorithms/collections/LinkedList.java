@@ -72,7 +72,7 @@ public class LinkedList<T> implements Iterable<T> {
   /**
    * 判断链表是否为空。
    * 
-   * @return 链表的状态（true 代表空，false 代表非空）
+   * @return 链表为空则返回 {@code true}，否则返回 {@code false}
    */
   public boolean isEmpty() {
     return size == 0;

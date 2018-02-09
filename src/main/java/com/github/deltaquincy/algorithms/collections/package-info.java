@@ -4,6 +4,6 @@
  */
 
 /**
- * 一系列集合类数据结构的实现。
+ * 一系列集合类数据结构。
  */
 package com.github.deltaquincy.algorithms.collections;
