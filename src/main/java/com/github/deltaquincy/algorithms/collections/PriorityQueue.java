@@ -14,6 +14,10 @@ public class PriorityQueue<T extends Comparable<T>> extends BinaryHeap<T> {
     super();
   }
 
+  public PriorityQueue(int initialCapacity) {
+    super(initialCapacity);
+  }
+
   public void insert(T item) {
     heap.add(item);
     swim(++size);

@@ -14,14 +14,14 @@ import java.util.Iterator;
  * 实现了获取链表大小、判断链表是否为空的方法，并且实现了 {@code Iterable} 接口。
  * 但它不提供任何可以改变链表内容的接口，而由以它为基础的数据结构提供。
  */
-public class LinkedList<T> implements Iterable<T> {
+class LinkedList<T> implements Iterable<T> {
   /** 链表的首节点 */
   Node first;
   /** 链表的大小 */
   int size;
 
-  /** 该实现省略了链表构造器，由以它为基础的数据结构提供链表功能。*/
-  public LinkedList() {}
+  /** 该实现省略了链表构造器，不允许外部直接实例化该类，由以它为基础的数据结构提供链表功能。*/
+  LinkedList() {}
   
   /**
    * 链表节点嵌套类。

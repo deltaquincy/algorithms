@@ -10,15 +10,15 @@ import java.util.ArrayList;
 /**
  * BinaryHeap
  */
-public class BinaryHeap<T extends Comparable<T>> {
+class BinaryHeap<T extends Comparable<T>> {
   ArrayList<T> heap;
   int size = 0;
 
-  public BinaryHeap() {
+  BinaryHeap() {
     this(10);
   }
   
-  public BinaryHeap(int initialCapacity) {
+  BinaryHeap(int initialCapacity) {
     heap = new ArrayList<T>(initialCapacity);
     heap.add(0, null);
   }
