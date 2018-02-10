@@ -16,9 +16,9 @@ import java.util.Iterator;
  */
 public class LinkedList<T> implements Iterable<T> {
   /** 链表的首节点 */
-  protected Node first;
+  Node first;
   /** 链表的大小 */
-  protected int size;
+  int size;
 
   /** 该实现省略了链表构造器，由以它为基础的数据结构提供链表功能。*/
   public LinkedList() {}
@@ -28,7 +28,7 @@ public class LinkedList<T> implements Iterable<T> {
    * 
    * 这个嵌套类表示了链表中的节点，每个节点都包含着一个内容对象和一个指向另一个节点的指针。
    */
-  protected class Node {
+  class Node {
     T item;
     Node next;
 

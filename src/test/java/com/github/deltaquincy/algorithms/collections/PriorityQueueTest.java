@@ -10,27 +10,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BinaryHeapTest {
-  private BinaryHeap<Integer> heap;
+public class PriorityQueueTest {
+  private PriorityQueue<Integer> queue;
 
   @Before
   public void setup() {
-    heap = new BinaryHeap<Integer>(20);
+    queue = new PriorityQueue<Integer>();
   }
 
   @Test
   public void testInsert() {
-    heap.insert(3);
-    heap.insert(28);
-    heap.insert(-92);
-    assertThat(heap.size()).isEqualTo(3);
+    queue.insert(3);
+    queue.insert(28);
+    queue.insert(-92);
+    assertThat(queue.size()).isEqualTo(3);
   }
 
   @Test
   public void testDeleteMax() {
-    heap.insert(28);
-    heap.insert(-92);
-    heap.insert(2);
-    assertThat(heap.deleteMax()).isEqualTo(28);
+    queue.insert(28);
+    queue.insert(-92);
+    queue.insert(2);
+    assertThat(queue.deleteMax()).isEqualTo(28);
   }
 }

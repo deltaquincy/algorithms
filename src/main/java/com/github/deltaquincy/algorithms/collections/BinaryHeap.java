@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * BinaryHeap
  */
 public class BinaryHeap<T extends Comparable<T>> {
-  private ArrayList<T> heap;
-  private int size = 0;
+  ArrayList<T> heap;
+  int size = 0;
 
   public BinaryHeap() {
     this(10);
@@ -31,27 +31,14 @@ public class BinaryHeap<T extends Comparable<T>> {
     return size;
   }
 
-  public void insert(T item) {
-    heap.add(item);
-    swim(++size);
-  }
-
-  public T deleteMax() {
-    T maxItem = heap.get(1);
-    exchange(1, size--);
-    heap.set(size+1, null);
-    sink(1);
-    return maxItem;
-  }
-
-  private void swim(int k) {
+  void swim(int k) {
     while (k > 1 && isLess(k/2, k)) {
       exchange(k/2, k);
       k /= 2;
     }
   }
 
-  private void sink(int k) {
+  void sink(int k) {
     while (2 * k <= size) {
       int j = 2 * k;
       if (j < size && isLess(j, j+1)) {
@@ -65,11 +52,11 @@ public class BinaryHeap<T extends Comparable<T>> {
     }
   }
 
-  private boolean isLess(int i, int j) {
+  boolean isLess(int i, int j) {
     return heap.get(i).compareTo(heap.get(j)) < 0;
   }
 
-  private void exchange(int i, int j) {
+  void exchange(int i, int j) {
     T temp = heap.get(i);
     heap.set(i, heap.get(j));
     heap.set(j, temp);
