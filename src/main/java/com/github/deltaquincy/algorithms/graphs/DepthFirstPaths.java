@@ -12,19 +12,19 @@ public class DepthFirstPaths {
   private int[] edgeTo;
   private final int s;
 
-  public DepthFirstPaths(Graph G, int s) {
-    marked = new boolean[G.V()];
-    edgeTo = new int[G.V()];
+  public DepthFirstPaths(Graph graph, int s) {
+    marked = new boolean[graph.vertex()];
+    edgeTo = new int[graph.vertex()];
     this.s = s;
-    dfs(G, s);
+    dfs(graph, s);
   }
 
-  private void dfs(Graph G, int v) {
+  private void dfs(Graph graph, int v) {
     marked[v] = true;
-    for (int w : G.adj(v)) {
+    for (int w : graph.connections(v)) {
       if (!marked[w]) {
         edgeTo[w] = v;
-        dfs(G, w);
+        dfs(graph, w);
       }
     }
   }

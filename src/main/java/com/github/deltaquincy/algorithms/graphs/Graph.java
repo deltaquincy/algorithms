@@ -5,56 +5,47 @@
 
 package com.github.deltaquincy.algorithms.graphs;
 
-import edu.princeton.cs.algs4.Bag;
-import edu.princeton.cs.algs4.In;
+import java.util.ArrayList;
+
+import com.github.deltaquincy.algorithms.collections.Bag;
 
 public class Graph {
-  private final int V;
-  private int E;
-  private Bag<Integer>[] adj;
+  private final int vertex;
+  private int edge;
+  private ArrayList<Bag<Integer>> connection;
 
-  public Graph(int V) {
-    this.V = V;
-    this.E = 0;
-    adj = (Bag<Integer>[]) new Bag[V];
-    for (int v = 0; v < V; v++) {
-      adj[v] = new Bag<Integer>();
+  public Graph(int v) {
+    this.vertex = v;
+    this.edge = 0;
+    connection = new ArrayList<Bag<Integer>>(v);
+    for (int i = 0; i < v; i++) {
+      connection.add(new Bag<Integer>());
     }
   }
 
-  public Graph(In in) {
-    this(in.readInt());
-    int E = in.readInt();
-    for (int i = 0; i < E; i++) {
-      int v = in.readInt();
-      int w = in.readInt();
-      addEdge(v, w);
-    }
+  public int vertex() {
+    return vertex;
   }
 
-  public int V() {
-    return V;
-  }
-
-  public int E() {
-    return E;
+  public int edge() {
+    return edge;
   }
 
   public void addEdge(int v, int w) {
-    adj[v].add(w);
-    adj[w].add(v);
-    E++;
+    connection.get(v).add(w);
+    connection.get(w).add(v);
+    edge++;
   }
 
-  public Iterable<Integer> adj(int v) {  // 抽象等级选了 Iterable 而不是 Bag
-    return adj[v];
+  public Iterable<Integer> connections(int v) {  // 抽象等级选了 Iterable 而不是 Bag
+    return connection.get(v);
   }
 
   public String toString() {
-    String s = V + " vertices, " + E + " edges\n";
-    for (int v = 0; v < V; v++) {
+    String s = vertex + " vertices, " + edge + " edges\n";
+    for (int v = 0; v < vertex; v++) {
       s += v + ": ";
-      for (int w : this.adj(v)) {
+      for (int w : this.connections(v)) {
         s += w + " ";
       }
       s += "\n";

@@ -13,19 +13,19 @@ public class BreadthFirstPaths {
   private int[] edgeTo;
   private final int s;
 
-  public BreadthFirstPaths(Graph G, int s) {
-    marked = new boolean[G.V()];
-    edgeTo = new int[G.V()];
+  public BreadthFirstPaths(Graph graph, int s) {
+    marked = new boolean[graph.vertex()];
+    edgeTo = new int[graph.vertex()];
     this.s = s;
-    bfs(G, s);
+    bfs(graph, s);
   }
 
-  private void bfs(Graph G, int s) {
+  private void bfs(Graph graph, int s) {
     Queue<Integer> queue = new Queue<Integer>();
     marked[s] = true;
     while (!queue.isEmpty()) {
       int v = queue.dequeue();
-      for (int w : G.adj(v)) {
+      for (int w : graph.connections(v)) {
         if (!marked[w]) {
           edgeTo[w] = v;
           marked[w] = true;
