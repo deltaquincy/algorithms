@@ -12,7 +12,7 @@ public class RedBlackTree<K extends Comparable<K>, V> /* implements SymbolTable<
   private static final boolean RED = true;
   private static final boolean BLACK = false;
 
-  private Node root;
+  private Node root = null;
 
   private class Node {
     K key;

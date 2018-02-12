@@ -25,4 +25,12 @@ public class InsertionSorting extends Sorting {
       }
     }
   }
+
+  public static void sort(String[] a, int lo, int hi, int d) {
+    for (int i = lo; i <= hi; i++) {
+      for (int j = i; j > lo && a[j].substring(d).compareTo(a[j-1].substring(d)) < 0; j--) {
+        exchange(a, j, j-1);
+      }
+    }
+  }
 }

@@ -10,7 +10,6 @@ package com.github.deltaquincy.algorithms.sorting;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * 快速排序。
@@ -19,9 +18,9 @@ import java.util.List;
  */
 public class QuickSorting extends Sorting {
   private static <T> void shuffle(T[] a) {
-    List<T> temp = new ArrayList<T>(Arrays.asList(a));
+    ArrayList<T> temp = new ArrayList<T>(Arrays.asList(a));
     Collections.shuffle(temp);
-    a = (T[]) temp.toArray();
+    temp.toArray(a);
   }
 
   private static <T extends Comparable<T>> int partition(T[] a, int lo, int hi) {
