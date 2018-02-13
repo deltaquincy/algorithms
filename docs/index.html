@@ -15,14 +15,19 @@
 <body>
   <section class="hero is-fullheight is-light">
     <div class="hero-head">
-      <div class="navbar">
+      <div class="navbar" role="navigation" aria-label="main navigation">
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item" href="http://deltaquincy.me/algorithms">
               <b>昆西的算法笔记</b>
             </a>
+            <span class="navbar-burger burger" data-target="navbarMenuItems">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </div>
-          <div class="navbar-menu">
+          <div class="navbar-menu" id="navbarMenuItems">
             <div class="navbar-end">
               <a class="navbar-item">
                 笔记目录
@@ -46,5 +51,7 @@
       </div>
     </div>
   </section>
+
+  <script src="./scripts.js"></script>
 </body>
 </html>
