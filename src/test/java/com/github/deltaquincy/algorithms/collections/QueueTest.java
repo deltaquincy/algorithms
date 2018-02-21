@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.collections;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import java.util.NoSuchElementException;
 
@@ -29,7 +29,7 @@ public class QueueTest {
   public void testConstructWithAnArray() {
     Integer[] items = {1, 2, 3, 4, 5};
     queue = new Queue<Integer>(items);
-    assertThat(queue.getSize()).isEqualTo(5);
+    assertEquals(queue.getSize(), 5);
   }
   
   @Test
@@ -37,15 +37,15 @@ public class QueueTest {
     queue.enqueue(0);
     queue.enqueue(35);
     queue.enqueue(-72);
-    assertThat(queue.getSize()).isEqualTo(3);
+    assertEquals(queue.getSize(), 3);
   }
 
   @Test
   public void testDequeue() {
     queue.enqueue(92);
     queue.enqueue(37);
-    assertThat(queue.dequeue()).isEqualTo(92);
-    assertThat(queue.dequeue()).isEqualTo(37);
+    assertEquals(queue.dequeue(), Integer.valueOf(92));
+    assertEquals(queue.dequeue(), Integer.valueOf(37));
   }
 
   @Test

@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.collections;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import java.util.NoSuchElementException;
 
@@ -29,7 +29,7 @@ public class StackTest {
   public void testConstructWithAnArray() {
     Integer[] items = {1, 2, 3, 4, 5};
     stack = new Stack<Integer>(items);
-    assertThat(stack.getSize()).isEqualTo(5);
+    assertEquals(stack.getSize(), 5);
   }
   
   @Test
@@ -37,15 +37,15 @@ public class StackTest {
     stack.push(0);
     stack.push(35);
     stack.push(-72);
-    assertThat(stack.getSize()).isEqualTo(3);
+    assertEquals(stack.getSize(), 3);
   }
 
   @Test
   public void testPop() {
     stack.push(92);
     stack.push(37);
-    assertThat(stack.pop()).isEqualTo(37);
-    assertThat(stack.pop()).isEqualTo(92);
+    assertEquals(stack.pop(), Integer.valueOf(37));
+    assertEquals(stack.pop(), Integer.valueOf(92));
   }
 
   @Test

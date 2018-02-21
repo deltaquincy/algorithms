@@ -5,8 +5,8 @@
 
 package com.github.deltaquincy.algorithms.graphs;
 
-import edu.princeton.cs.algs4.Queue;
-import edu.princeton.cs.algs4.Stack;
+import com.github.deltaquincy.algorithms.collections.Queue;
+import com.github.deltaquincy.algorithms.collections.Stack;
 
 public class BreadthFirstPaths {
   private boolean[] marked;

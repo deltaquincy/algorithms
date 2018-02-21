@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.string;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
@@ -45,7 +45,7 @@ public class LeastSignificantDigitFirstStringSortingTest {
   @Test
   public void testStringSort() {
     LeastSignificantDigitFirstStringSorting.sort(list, 7);
-    assertThat(list).isEqualTo(check);
+    assertArrayEquals(list, check);
   }
   
 }

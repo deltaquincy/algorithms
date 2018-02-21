@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.collections;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class PriorityQueueTest {
     queue.insert(3);
     queue.insert(28);
     queue.insert(-92);
-    assertThat(queue.size()).isEqualTo(3);
+    assertEquals(queue.size(), 3);
   }
 
   @Test
@@ -31,6 +31,6 @@ public class PriorityQueueTest {
     queue.insert(28);
     queue.insert(-92);
     queue.insert(2);
-    assertThat(queue.deleteMax()).isEqualTo(28);
+    assertEquals(queue.deleteMax(), Integer.valueOf(28));
   }
 }

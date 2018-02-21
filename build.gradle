@@ -12,8 +12,5 @@ repositories {
 }
 
 dependencies {
-  implementation 'edu.princeton.cs:algs4:1.0.3'  // algs4 book package
-  implementation 'commons-io:commons-io:2.6'  // Apache Commons IO library
   testImplementation 'junit:junit:4.12'  // JUnit test framework
-  testImplementation 'org.assertj:assertj-core:3.9.0' // AssertJ library
 }

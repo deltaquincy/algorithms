@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.sorting;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,6 +15,6 @@ public class ShellSortingTest {
   @Test
   public void testSort() {
     ShellSorting.sort(array);
-    assertThat(ShellSorting.isSorted(array)).isTrue();
+    assertTrue(ShellSorting.isSorted(array));
   }
 }

@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.sorting;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,6 +15,6 @@ public class MergeSortingTest {
   @Test
   public void testSort() {
     MergeSorting.sort(array);
-    assertThat(MergeSorting.isSorted(array)).isTrue();
+    assertTrue(MergeSorting.isSorted(array));
   }
 }

@@ -5,7 +5,7 @@
 
 package com.github.deltaquincy.algorithms.collections;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +28,6 @@ public class LinkedListTest {
     for (int item : stack) {
       timer++;
     }
-    assertThat(timer).isEqualTo(3);
+    assertEquals(timer, 3);
   }
 }
